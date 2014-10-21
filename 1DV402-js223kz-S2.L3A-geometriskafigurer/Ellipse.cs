@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _1DV402_js223kz_S2.L3A_geometriskafigurer
 {
-    public class Ellipse : Shape
+     class Ellipse : Shape
     {
 
         //ska ge ellipsens area

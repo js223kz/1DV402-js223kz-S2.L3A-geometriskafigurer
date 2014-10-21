@@ -27,7 +27,7 @@ namespace _1DV402_js223kz_S2.L3A_geometriskafigurer
         // Då en beräkning är gjord ska menyn visas på nytt
         static void Main(string[] args)
         {
-
+            ViewMenu();
 
         }
 
@@ -46,6 +46,15 @@ namespace _1DV402_js223kz_S2.L3A_geometriskafigurer
         //ska bara presentera en meny någon inläsning ska inte göras
         private static void ViewMenu()
         {
+
+            Console.BackgroundColor = ConsoleColor.DarkGreen;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine(" ============================ ");
+            Console.WriteLine(" =                          = ");
+            Console.WriteLine(" =   Geometriska figurer    = ");
+            Console.WriteLine(" =                          = ");
+            Console.WriteLine(" ============================ ");
+            Console.ResetColor();
 
         }
 

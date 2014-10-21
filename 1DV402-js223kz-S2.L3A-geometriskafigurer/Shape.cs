@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _1DV402_js223kz_S2.L3A_geometriskafigurer
 {
-    class Shape
+    public abstract class Shape
     {
         //figurens längd
         private double _length;
@@ -17,14 +17,7 @@ namespace _1DV402_js223kz_S2.L3A_geometriskafigurer
         //Representerar figurens area
         public abstract double Area
         {
-            get
-            {
-
-            }
-            set
-            {
-
-            }
+            get;
         }
 
         //Figurens längd. Kapslar in fältet _lenght. Set ska validera värdet som tilldelas egenskapen. Är värdet inte större än noll ArgumentEx.
@@ -43,14 +36,8 @@ namespace _1DV402_js223kz_S2.L3A_geometriskafigurer
         //Representerar figurens omkrets
         public abstract double Perimeter
         {
-            get
-            {
+            get;
 
-            }
-            set
-            {
-
-            }
         }
 
         //Figurens bredd. Kapslar in fältet _width. Set ska validera att värdet är större än noll ArgumentEx.
