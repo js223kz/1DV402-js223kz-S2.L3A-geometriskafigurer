@@ -74,17 +74,14 @@ namespace _1DV402_js223kz_S2.L3A_geometriskafigurer
 
         public override string ToString()
         {
-            return base.ToString();
+
+            string lenght = String.Format("{0,-8}{1,-3}{2,8}", "Längd", ":", Length);
+            string width = String.Format("{0,-8}{1,-3}{2,8}", "Bredd", ":", Width);
+            string area = String.Format("{0,-8}{1,-3}{2,8}", "Area", ":", Area);
+            string perimeter = String.Format("{0,-8}{1,-3}{2,8}", "Omkrets", ":", Perimeter );
+
+            return string.Format("{0}{1}{2}{3}", lenght + Environment.NewLine, width + Environment.NewLine, area + Environment.NewLine, perimeter + Environment.NewLine);
+         
         }
-
-        //Ska returnera en sträng respresenterande värdet av en instans. Strängen ska vara speciellt formaterad
-      /*  public override string ToString(string figureDetails)
-        {
-            
-
-            //string colon = ":";
-            //return figureDetails.Format("Lenght{0}{1}" + "Bredd{0}{2}" + "Omkrets{0}{3}" + "Area{0}{4}", ":" Length, Width, Perimeter, Area); 
-            
-        }*/
     }
 }

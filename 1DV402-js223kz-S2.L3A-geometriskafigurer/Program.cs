@@ -15,7 +15,7 @@ namespace _1DV402_js223kz_S2.L3A_geometriskafigurer
         //kan hantera. Typen används då metoden Main() anropar CreateShape för att informera vilken typ
         //av figur som ska skapas.
         //Typen definieras lämpligen i filen Shape.cs men då utanför klassdefinitionen så att den inte blir en del av typen Shape.
-        private static void CreateShape(KindOfShape shapeType)
+        private static Shape CreateShape(KindOfShape shapeType)
         {
             double lenght = 0.0;
             double width = 0.0;
@@ -26,16 +26,17 @@ namespace _1DV402_js223kz_S2.L3A_geometriskafigurer
                      lenght = ReadDoubleGreaterThanZero("Ange längden: ");
                      width = ReadDoubleGreaterThanZero("Ange bredden: ");
                      Ellipse ellipse = new Ellipse(lenght, width);
-                     ViewShapeDetail(ellipse);
-                     break;
+                     return ellipse;
                  
                 case KindOfShape.shapeRectangle:
-                     lenght = ReadDoubleGreaterThanZero("Ange längden: ");
-                     width = ReadDoubleGreaterThanZero("Ange bredden: ");
-                     Rectangle rectangle = new Rectangle(lenght, width);
-                     ViewShapeDetail(rectangle);
-                     break;
-             }
+                    lenght = ReadDoubleGreaterThanZero("Ange längden: ");
+                    width = ReadDoubleGreaterThanZero("Ange bredden: ");
+                    Rectangle rectangle = new Rectangle(lenght, width);
+                    return rectangle;
+                
+                default:
+                     throw new NotImplementedException();
+             }   
         }
 
         //Väljer användaren att inte avsluta applicationen anropas metode CreateShape
@@ -47,7 +48,7 @@ namespace _1DV402_js223kz_S2.L3A_geometriskafigurer
             ViewMenu();
 
             int pressedKey = int.Parse(Console.ReadLine());
-            KindOfShape shapeType;
+            Shape shapeType = null;
             
             switch (pressedKey)
             {
@@ -66,10 +67,7 @@ namespace _1DV402_js223kz_S2.L3A_geometriskafigurer
                     Console.WriteLine();
                     Console.ResetColor();
 
-
-                    shapeType = KindOfShape.shapeEllipse;
-                    CreateShape(shapeType);
-
+                    shapeType = CreateShape(KindOfShape.shapeEllipse);
                     break;
 
                 case 2:
@@ -84,11 +82,12 @@ namespace _1DV402_js223kz_S2.L3A_geometriskafigurer
                     Console.WriteLine();
                     Console.ResetColor();
 
-                    shapeType = KindOfShape.shapeRectangle;
-                    CreateShape(shapeType);
+                    shapeType = CreateShape(KindOfShape.shapeRectangle);
                    
                     break;
             }
+           
+            ViewShapeDetail(shapeType);
         }
 
         private static double ReadDoubleGreaterThanZero(string prompt){
@@ -136,14 +135,17 @@ namespace _1DV402_js223kz_S2.L3A_geometriskafigurer
         //Parametern shape av TYpen Shape refererar till figuren
         //Genom att utnyttja att basklassen Shape överskugga metoden ToString() förenklas koden
         //väsentlgt då en figurs längd, bredd, omkrets och area ska presenteras.
-        private static void ViewShapeDetail(Shape shapeType)
+       private static void ViewShapeDetail(Shape shapeType)
         {
-
-
+            Console.BackgroundColor = ConsoleColor.DarkGreen;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine();
+            Console.WriteLine(" ============================ ");
+            Console.WriteLine(" =          Detaljer        = ");
+            Console.WriteLine(" ============================ ");
+            Console.WriteLine();
+            Console.ResetColor();
+            Console.WriteLine(shapeType.ToString());
         }
-
-       
-
-
     }
 }
