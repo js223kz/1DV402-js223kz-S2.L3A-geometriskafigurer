@@ -14,7 +14,9 @@ namespace _1DV402_js223kz_S2.L3A_geometriskafigurer
         {
             get
             {
-                throw new NotImplementedException();
+                Length = Length / 2;
+                Width = Width / 2;
+                return Math.PI * Length * Width;
             }
            
         }
@@ -24,7 +26,7 @@ namespace _1DV402_js223kz_S2.L3A_geometriskafigurer
         {
             get
             {
-                throw new NotImplementedException();
+                return Math.PI * Math.Sqrt(2 * Length * Length + 2 * Width * Width);
             }
             
         }

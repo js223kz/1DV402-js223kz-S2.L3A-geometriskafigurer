@@ -14,7 +14,7 @@ namespace _1DV402_js223kz_S2.L3A_geometriskafigurer
         {
             get
             {
-                throw new NotImplementedException();
+                return Length * Width;
             }
             
         }
@@ -24,7 +24,7 @@ namespace _1DV402_js223kz_S2.L3A_geometriskafigurer
         {
             get
             {
-                throw new NotImplementedException();
+                return (Length * 2) + (Width * 2);
             }
             
         }
