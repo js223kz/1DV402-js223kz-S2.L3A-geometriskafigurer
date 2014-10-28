@@ -9,134 +9,147 @@ namespace _1DV402_js223kz_S2.L3A_geometriskafigurer
     class Program
     {
 
-        //metoden ska läsa in en figurs längd och bredd, skapa objektet och returnera en referens till det
-        //Metoden ska ha en parameter av typen ShapeType vars värde bestämmer om en ellips eller rektangel ska skapas
-        //Den uppräkningsbara typen Shape Type används för att definiera vilka typer av figurer applikationen
-        //kan hantera. Typen används då metoden Main() anropar CreateShape för att informera vilken typ
-        //av figur som ska skapas.
-        //Typen definieras lämpligen i filen Shape.cs men då utanför klassdefinitionen så att den inte blir en del av typen Shape.
+       //method that handles lenght and witdth, creates the object an returns a reference to that object
         private static Shape CreateShape(KindOfShape shapeType)
         {
             double lenght = 0.0;
             double width = 0.0;
 
-            switch (shapeType)
-             {
-                 case KindOfShape.shapeEllipse:
-                     lenght = ReadDoubleGreaterThanZero("Ange längden: ");
-                     width = ReadDoubleGreaterThanZero("Ange bredden: ");
-                     Ellipse ellipse = new Ellipse(lenght, width);
-                     return ellipse;
-                 
-                case KindOfShape.shapeRectangle:
-                    lenght = ReadDoubleGreaterThanZero("Ange längden: ");
-                    width = ReadDoubleGreaterThanZero("Ange bredden: ");
-                    Rectangle rectangle = new Rectangle(lenght, width);
-                    return rectangle;
-                
-                default:
-                     throw new NotImplementedException();
-             }   
-        }
+                switch (shapeType)
+                {
+                    case KindOfShape.shapeEllipse:
 
-        //Väljer användaren att inte avsluta applicationen anropas metode CreateShape
-        //CreateShape skapar och returnerar en referens till ett ellips eller rektangel objekt
-        //Referensen till objektet används vid anrop av ViewDetail() som presenterar figurens detaljer.
-        // Då en beräkning är gjord ska menyn visas på nytt
-        static void Main(string[] args)
+                        lenght = ReadDoubleGreaterThanZero("Ange längden: ");
+                        width = ReadDoubleGreaterThanZero("Ange bredden: ");
+                        Ellipse ellipse = new Ellipse(lenght, width);
+
+                        return ellipse;
+
+                    case KindOfShape.shapeRectangle:
+                        lenght = ReadDoubleGreaterThanZero("Ange längden: ");
+                        width = ReadDoubleGreaterThanZero("Ange bredden: ");
+                        Rectangle rectangle = new Rectangle(lenght, width);
+                        
+                        return rectangle;
+
+                    default:
+                        throw new NotImplementedException();
+                }
+       }
+	        
+         static void Main(string[] args)
         {
-            ViewMenu();
 
-            int pressedKey = int.Parse(Console.ReadLine());
-            Shape shapeType = null;
-            
-            switch (pressedKey)
+            do
             {
-                case 0:
-                    return;
+                ViewMenu();
+            
+                
+                int pressedKey = int.Parse(Console.ReadLine());
+                Shape shapeType = null;
 
-                case 1:
-                    Console.Clear();
-                    Console.BackgroundColor = ConsoleColor.DarkGreen;
-                    Console.ForegroundColor = ConsoleColor.White;
-                    Console.WriteLine(" ============================ ");
-                    Console.WriteLine(" =                          = ");
-                    Console.WriteLine(" =          Ellips          = ");
-                    Console.WriteLine(" =                          = ");
-                    Console.WriteLine(" ============================ ");
-                    Console.WriteLine();
-                    Console.ResetColor();
 
-                    shapeType = CreateShape(KindOfShape.shapeEllipse);
-                    break;
+                switch (pressedKey)
+                {
+                    case 0:
+                        return;
 
-                case 2:
-                    Console.Clear();
-                    Console.BackgroundColor = ConsoleColor.DarkGreen;
-                    Console.ForegroundColor = ConsoleColor.White;
-                    Console.WriteLine(" ============================ ");
-                    Console.WriteLine(" =                          = ");
-                    Console.WriteLine(" =         Rektangel        = ");
-                    Console.WriteLine(" =                          = ");
-                    Console.WriteLine(" ============================ ");
-                    Console.WriteLine();
-                    Console.ResetColor();
+                    case 1:
+                        Console.Clear();
+                        Console.BackgroundColor = ConsoleColor.DarkGreen;
+                        Console.ForegroundColor = ConsoleColor.White;
+                        Console.WriteLine(" ============================ ");
+                        Console.WriteLine(" =                          = ");
+                        Console.WriteLine(" =          Ellips          = ");
+                        Console.WriteLine(" =                          = ");
+                        Console.WriteLine(" ============================ ");
+                        Console.WriteLine();
+                        Console.ResetColor();
 
-                    shapeType = CreateShape(KindOfShape.shapeRectangle);
-                   
-                    break;
-            }
-           
-            ViewShapeDetail(shapeType);
-        }
+                        shapeType = CreateShape(KindOfShape.shapeEllipse);
+                        break;
+                    case 2:
+                        Console.Clear();
+                        Console.BackgroundColor = ConsoleColor.DarkGreen;
+                        Console.ForegroundColor = ConsoleColor.White;
+                        Console.WriteLine(" ============================ ");
+                        Console.WriteLine(" =                          = ");
+                        Console.WriteLine(" =         Rektangel        = ");
+                        Console.WriteLine(" =                          = ");
+                        Console.WriteLine(" ============================ ");
+                        Console.WriteLine();
+                        Console.ResetColor();
+
+                        shapeType = CreateShape(KindOfShape.shapeRectangle);
+                        break;
+                }
+
+                ViewShapeDetail(shapeType);
+
+                Console.BackgroundColor = ConsoleColor.Blue;
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("Press any key to continue");
+                Console.ResetColor();
+               
+                
+            } while (Console.ReadKey(true).Key != ConsoleKey.Escape);  
+          
+         }
 
         private static double ReadDoubleGreaterThanZero(string prompt){
             double value = 0.0;
-            Console.Write(prompt);
+            
             try
             {
+                Console.Write(prompt);
                 prompt = Console.ReadLine();
                 value = double.Parse(prompt);
+
             }
-            catch (ArgumentException e)
+             catch (ArgumentException e)
+	        {
+		        Console.BackgroundColor = ConsoleColor.Red;
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("{0}", e.Message);
+                Console.ResetColor();
+	        }
+            catch (FormatException)
             {
                 Console.BackgroundColor = ConsoleColor.Red;
                 Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine("{0}", e.Message);
+                Console.WriteLine("Kan inte tolkas som ett giltigt tal!");
                 Console.ResetColor();
             }
             return value; 
         }
 
-        //ska bara presentera en meny någon inläsning ska inte göras
+        //Presenting the user menu
         private static void ViewMenu()
         {
+            Console.Clear();
+                Console.BackgroundColor = ConsoleColor.DarkGreen;
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine(" ============================ ");
+                Console.WriteLine(" =                          = ");
+                Console.WriteLine(" =   Geometriska figurer    = ");
+                Console.WriteLine(" =                          = ");
+                Console.WriteLine(" ============================ ");
+                Console.ResetColor();
 
-            Console.BackgroundColor = ConsoleColor.DarkGreen;
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine(" ============================ ");
-            Console.WriteLine(" =                          = ");
-            Console.WriteLine(" =   Geometriska figurer    = ");
-            Console.WriteLine(" =                          = ");
-            Console.WriteLine(" ============================ ");
-            Console.ResetColor();
+                Console.WriteLine("0. Avsluta.");
+                Console.WriteLine("1. Ellips.");
+                Console.WriteLine("2. Rektangel.");
 
-            Console.WriteLine("0. Avsluta.");
-            Console.WriteLine("1. Ellips.");
-            Console.WriteLine("2. Rektangel.");
+                Console.WriteLine(" ============================ ");
+                Console.WriteLine("Ange menyval [0-2]"); 
 
-            Console.WriteLine(" ============================ ");
-            Console.WriteLine("Ange menyval [0-2]");
 
         }
 
-        //ska presentera en figurs detaljer.
-        //Vid anrop av metoden skickas ett argumnet med som refererar till figuren vars detaljer ska presenteras.
-        //Parametern shape av TYpen Shape refererar till figuren
-        //Genom att utnyttja att basklassen Shape överskugga metoden ToString() förenklas koden
-        //väsentlgt då en figurs längd, bredd, omkrets och area ska presenteras.
+        //Presents the details of the shape, area and, perimeter
        private static void ViewShapeDetail(Shape shapeType)
         {
+            Console.Clear();
             Console.BackgroundColor = ConsoleColor.DarkGreen;
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine();
@@ -146,6 +159,7 @@ namespace _1DV402_js223kz_S2.L3A_geometriskafigurer
             Console.WriteLine();
             Console.ResetColor();
             Console.WriteLine(shapeType.ToString());
+  
         }
     }
 }
