@@ -1,6 +1,6 @@
-c:\users\johanna\documents\visual studio 2013\Projects\1DV402-js223kz-S2.L3A-geometriskafigurer\1DV402-js223kz-S2.L3A-geometriskafigurer\bin\Debug\1DV402-js223kz-S2.L3A-geometriskafigurer.exe.config
-c:\users\johanna\documents\visual studio 2013\Projects\1DV402-js223kz-S2.L3A-geometriskafigurer\1DV402-js223kz-S2.L3A-geometriskafigurer\obj\Debug\1DV402-js223kz-S2.L3A-geometriskafigurer.csprojResolveAssemblyReference.cache
-C:\Users\Johanna\documents\visual studio 2013\Projects\1DV402-js223kz-S2.L3A-geometriskafigurer\1DV402-js223kz-S2.L3A-geometriskafigurer\bin\Debug\1DV402-js223kz-S2.L3A-geometriskafigurer.exe
-C:\Users\Johanna\documents\visual studio 2013\Projects\1DV402-js223kz-S2.L3A-geometriskafigurer\1DV402-js223kz-S2.L3A-geometriskafigurer\bin\Debug\1DV402-js223kz-S2.L3A-geometriskafigurer.pdb
-C:\Users\Johanna\documents\visual studio 2013\Projects\1DV402-js223kz-S2.L3A-geometriskafigurer\1DV402-js223kz-S2.L3A-geometriskafigurer\obj\Debug\1DV402-js223kz-S2.L3A-geometriskafigurer.exe
-C:\Users\Johanna\documents\visual studio 2013\Projects\1DV402-js223kz-S2.L3A-geometriskafigurer\1DV402-js223kz-S2.L3A-geometriskafigurer\obj\Debug\1DV402-js223kz-S2.L3A-geometriskafigurer.pdb
+C:\Users\Johanna\Documents\Visual Studio 2013\Projects\1DV402-js223kz-S2.L3A-geometriskafigurer\1DV402-js223kz-S2.L3A-geometriskafigurer\bin\Debug\1DV402-js223kz-S2.L3A-geometriskafigurer.exe.config
+C:\Users\Johanna\Documents\Visual Studio 2013\Projects\1DV402-js223kz-S2.L3A-geometriskafigurer\1DV402-js223kz-S2.L3A-geometriskafigurer\bin\Debug\1DV402-js223kz-S2.L3A-geometriskafigurer.exe
+C:\Users\Johanna\Documents\Visual Studio 2013\Projects\1DV402-js223kz-S2.L3A-geometriskafigurer\1DV402-js223kz-S2.L3A-geometriskafigurer\bin\Debug\1DV402-js223kz-S2.L3A-geometriskafigurer.pdb
+C:\Users\Johanna\Documents\Visual Studio 2013\Projects\1DV402-js223kz-S2.L3A-geometriskafigurer\1DV402-js223kz-S2.L3A-geometriskafigurer\obj\Debug\1DV402-js223kz-S2.L3A-geometriskafigurer.csprojResolveAssemblyReference.cache
+C:\Users\Johanna\Documents\Visual Studio 2013\Projects\1DV402-js223kz-S2.L3A-geometriskafigurer\1DV402-js223kz-S2.L3A-geometriskafigurer\obj\Debug\1DV402-js223kz-S2.L3A-geometriskafigurer.exe
+C:\Users\Johanna\Documents\Visual Studio 2013\Projects\1DV402-js223kz-S2.L3A-geometriskafigurer\1DV402-js223kz-S2.L3A-geometriskafigurer\obj\Debug\1DV402-js223kz-S2.L3A-geometriskafigurer.pdb

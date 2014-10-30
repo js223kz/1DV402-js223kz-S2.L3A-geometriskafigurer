@@ -12,19 +12,17 @@ namespace _1DV402_js223kz_S2.L3A_geometriskafigurer
     };
     public abstract class Shape
     {
-        //figurens längd
         private double _length;
 
-        //figurens bredd
         private double _width;
 
-        //Representerar figurens area
+        //Represents area of the shape
         public abstract double Area
         {
             get;
         }
 
-        //Figurens längd. Kapslar in fältet _lenght. Set ska validera värdet som tilldelas egenskapen. Är värdet inte större än noll ArgumentEx.
+        //Shape lenght validates the value from userinput
         public double Length
         {
             get
@@ -41,14 +39,14 @@ namespace _1DV402_js223kz_S2.L3A_geometriskafigurer
             }
         }
 
-        //Representerar figurens omkrets
+        //Represents the perimeter of shape
         public abstract double Perimeter
         {
             get;
 
         }
 
-        //Figurens bredd. Kapslar in fältet _width. Set ska validera att värdet är större än noll ArgumentEx.
+        //Width of shape validates value from user input
         public double Width
         {
             get
@@ -65,7 +63,7 @@ namespace _1DV402_js223kz_S2.L3A_geometriskafigurer
             }
         }
 
-        //konstruktorn ansvarar för att fälten via egenskaperna, tilldelas de värden konstruktorns parametrar har
+    
         protected Shape(double length, double width)
         {
             Length = length;
