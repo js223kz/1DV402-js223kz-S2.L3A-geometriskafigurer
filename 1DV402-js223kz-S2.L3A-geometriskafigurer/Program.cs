@@ -33,7 +33,7 @@ namespace _1DV402_js223kz_S2.L3A_geometriskafigurer
                     return rectangle;
 
                 default:
-                    throw new NotImplementedException();
+                    throw new Exception("Ett oväntat fel inträffade");
             }
         }
 
@@ -95,7 +95,8 @@ namespace _1DV402_js223kz_S2.L3A_geometriskafigurer
             } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
 
         }
-
+        
+        //Handles userinput and returns a value
         private static double ReadDoubleGreaterThanZero(string prompt)
         {
             double value = 0.0;
@@ -129,10 +130,10 @@ namespace _1DV402_js223kz_S2.L3A_geometriskafigurer
                     Console.WriteLine("Kan inte tolkas som ett giltigt tal!");
                     Console.ResetColor();
                 }
-                
-                
+
+
             } while (isValid == false);
-            
+
             return value;
 
         }

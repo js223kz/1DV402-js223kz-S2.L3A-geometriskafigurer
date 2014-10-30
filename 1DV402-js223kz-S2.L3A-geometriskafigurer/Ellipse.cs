@@ -8,8 +8,6 @@ namespace _1DV402_js223kz_S2.L3A_geometriskafigurer
 {
      class Ellipse : Shape
     {
-
-        //ska ge ellipsens area
         public override double Area
         {
             get
@@ -18,7 +16,6 @@ namespace _1DV402_js223kz_S2.L3A_geometriskafigurer
                 Width = Width / 2;
                 return Math.PI * Length * Width;
             }
-           
         }
 
         //ska ge ellipsens omkrets
@@ -28,7 +25,6 @@ namespace _1DV402_js223kz_S2.L3A_geometriskafigurer
             {
                 return Math.PI * Math.Sqrt(2 * Length * Length + 2 * Width * Width);
             }
-            
         }
 
         //genom anrop av basklassens konstruktor sätts objektets längd och bredd
@@ -38,6 +34,5 @@ namespace _1DV402_js223kz_S2.L3A_geometriskafigurer
             Length = lenght;
             Width = width;
         }
-
     }
 }
